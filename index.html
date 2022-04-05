@@ -1,83 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <title>Busca CEP</title>
 </head>
 
-<form action="">
-    <label for="cep">Cep</label><br>
-    <input id="cep" type="text" maxlength="11"><br>
-    <label for="bairro">Bairro</label><br>
-    <input type="text" id="bairro"><br>
-    <label for="ddd">ddd</label><br>
-    <input type="text" id="ddd"><br>
-    <label for="ibge">Ibge</label><br>
-    <input type="text" id="ibge"><br>
-    <label for="localidade">Localidade</label><br>
-    <input type="text" id="localidade"><br>
-    <label for="logradouro">Logradouro</label><br>
-    <input type="text" id="logradouro"><br>
-    <label for="uf">Uf</label><br>
-    <input type="text" id="uf"><br>
-    <label for="siafi">Siafi</label><br>
-    <input type="text" id="siafi"><br>
-
-    <input onclick="enviar()" type="button" value="Enviar">
-</form>
-<script>
-   const options = {
-    method: "GET",
-    mode: "cors",
-    caches: "default"
-}
-
-const cep = document.getElementById("cep")
-cep.addEventListener("blur", (e) => {
-    let Cep = document.getElementById("cep").value;
-    console.log(Cep)
-    let search = cep.value.replace("-", "")
-    fetch(`https://viacep.com.br/ws/${search}/json/`, options).then((response) => {
-        response.json().then(data => {
-            console.log(data)
-            document.getElementById("bairro").value = data.bairro;
-            document.getElementById("ddd").value = data.ddd;
-            document.getElementById("ibge").value = data.ibge;
-            document.getElementById("localidade").value = data.localidade;
-            document.getElementById("logradouro").value = data.logradouro;
-            document.getElementById("uf").value = data.uf;
-            document.getElementById("siafi").value = data.siafi;
-
-        })
-    })
-})
-
-function enviar() {
-    let bairro = document.getElementById("bairro").value;
-    let ddd = document.getElementById("ddd").value;
-    let ibge = document.getElementById("ibge").value;
-    let localidade = document.getElementById("localidade").value;
-    let logradouro = document.getElementById("logradouro").value;
-    let uf = document.getElementById("uf").value;
-    let siafi = document.getElementById("siafi").value;
-    let json = {
-        "bairro": bairro,
-        "ddd": ddd,
-        "ibge": ibge,
-        "localidade": localidade,
-        "logradouro": logradouro,
-        "uf": uf,
-        "siafi": siafi
-    }
-    console.log(json)
-}
-</script>
-
 <body>
+    <div class="quadrado1"></div>
+    <div class="quadrado2"></div>
+    <div class="principal">
+        <div class="quadrado">
+            <img class="img_cep" src="img/localizacao-png.png">
+                <h1 class="text_Busca">Busque seu CEP</h1>
+                <button id="btn" class="pesquisa"><img src="img/Vector.png" alt=""></button>
+            
+        </div>
 
+        <div class="base_form">
+            <div class="form">
+
+                <div class="linha1"></div>
+                <div class="linha2"></div>
+
+            <div class="title_form">
+                <h1 class="effect">CEP</h1>
+                <h1 class="effect1">CEP</h1>
+                <h1 class="effect">CEP</h1>
+            </div>
+                <form action="">
+                   
+                    <input id="cep" type="text" maxlength="11" placeholder="CEP"><br>
+                    
+                    <input type="text" id="bairro" placeholder="Bairro"><br>
+                   
+                    <input type="text" id="ddd" placeholder="DDD"><br>
+                    
+                    <input type="text" id="ibge" placeholder="ibge"><br>
+                  
+                    <input type="text" id="localidade" placeholder="Localidade"><br>
+                    
+                    <input type="text" id="logradouro" placeholder="Logradouro"><br>
+                  
+                    <input type="text" id="uf" placeholder="Uf"><br>
+                   
+                    <input type="text" id="siafi" placeholder="Siafi"><br>
+
+                    <input onclick="enviar()" type="button" value="Enviar" class="btn">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.querySelector(".form");
+        const btn = document.querySelector("#btn")
+        
+        btn.addEventListener("click", (e) => {
+            x.classList.add("active")
+        });
+
+    </script>
+    <script src="fetch.js"></script>
 </body>
 
 </html>

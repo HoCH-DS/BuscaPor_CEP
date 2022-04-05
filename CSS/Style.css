@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #F5F3F3;
+}
+.principal{
+    width: 1300px;
+    height: 800px;
+    background-color: #F5F3F3;
+    box-shadow: 0px 0px 50px 10px #c3c3c3; 
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 80px auto;
+    z-index: 100;
+}
+.quadrado{
+    position: absolute;
+    width: 500px;
+    height: 732px;
+    background-color: #FDA625;
+    top: 115px;
+    left: 400px;
+    text-align: center;
+  /*   display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.quadrado1{
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    background-color: #FDA625;
+    top: 0;
+    left: 400px;
+
+}
+.quadrado2{
+    position: absolute;
+    width: 500px;
+    height: 89px;
+    background-color: #FDA625;
+    bottom: 0;
+    left: 400px;
+
+}
+.img_cep{
+   margin:200px 0  0 -10px;
+}
+
+.base_form{
+    width: 1200px;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.form{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    right: 100px;
+    background-color: #F5F3F3;
+    box-shadow: 0px 0px 30px 5px #c3c3c3; 
+     display: none; 
+    justify-content: center;
+    align-items: center;
+    transform: translateX(150px); 
+}
+.active{
+    display: flex;
+    transform: translateX(750px);
+    opacity: 1;
+    animation: form 3s ease;
+}
+@keyframes form {
+    0%{
+        transform: translateX(150px);
+        opacity: 0;
+    }
+   
+    100%{
+        opacity: 1;
+        transform: translateX(750px);
+    }
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+input{
+    background-color: transparent;
+    border: none;
+    margin: 10px 20px;
+    height: 30px;
+    border-bottom: 2px solid #000;
+    outline: none ;
+    color: #000;
+}
+input::placeholder{
+    color: #000;
+}
+.title_form{
+    position: absolute;
+    top: 10px;
+}
+.effect{
+    font-size: 36px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #F5F3F3;
+    text-shadow: 
+    -1px -1px 0px #000, 
+    -1px 1px 0px #000,                    
+     1px -1px 0px #000,                  
+     1px 0px 0px #000;
+}
+.effect1{
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: -14px;
+    margin-bottom: -14px;
+}
+.linha1{
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    width: 150px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #FDA625;
+}
+
+.linha2{
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    width: 150px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #FDA625;
+}
+.btn{
+    position: absolute;
+    bottom: 30px;
+    width: 300px;
+    height: 50px;
+    background-color: #FDA625;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.pesquisa{
+    background-color: #F5F3F3;
+    padding: 25px;
+    border-radius: 50%;
+    margin: 50px auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pesquisa img{
+    width: 20px;
+}
+.text_Busca{
+    margin-top: 50px;
+    font-size: 20px;
+    color: #fff;
+}
